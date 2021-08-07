@@ -7,6 +7,7 @@ export default class PlayScene extends Scene {
     // var bomb;
     var car;
     var speed;
+    
     //  Input Events
     var cursors;
   }
@@ -36,11 +37,16 @@ export default class PlayScene extends Scene {
 
     if (this.cursors.space.isDown)
     {
+      // increments the x position of the car to make it appear it's moving right to left on screen
+      // If we had a background we could apply this to is so it appear the car is moving along
+      // a scene of mtns or something
       this.car.x += this.speed * delta;
 
+      // if car is off screen
       if (this.car.x > 864)
       {
-          this.car.x = 64;
+        // reset car to starting position
+        this.car.x = 64;
       }
     }
   }
